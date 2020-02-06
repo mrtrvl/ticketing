@@ -1,0 +1,26 @@
+{
+  "name": "ticketing",
+  "version": "1.0.0",
+  "description": "ticketing application for repair shop",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^17.1.0",
+    "bcrypt": "^3.0.8",
+    "dotenv": "^8.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^8.0.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
