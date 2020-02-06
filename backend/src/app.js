@@ -1,6 +1,8 @@
 const config = require('./config');
-const { app } = require('./loaders');
-const PORT = config.port;
+const { app, db } = require('./loaders');
 
-app.listen(PORT);
-console.log(`App is running on port ${ PORT } ...`)
+const PORT = config.port;
+db.initDatabase();
+app.listen(PORT, () => {
+  console.log(`App is running on port ${ PORT } ...`);
+});

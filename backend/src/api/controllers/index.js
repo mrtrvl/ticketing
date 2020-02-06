@@ -1,5 +1,7 @@
-const HealthController = require('./health.controller');
+const Health = require('./health.controller');
+const Person = require('./person.controller');
 
 module.exports = {
-  HealthController
+  Health,
+  Person,
 }

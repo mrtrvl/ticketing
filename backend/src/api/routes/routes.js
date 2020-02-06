@@ -4,10 +4,15 @@ const router = new Router({
 });
 
 const {
-  HealthController
+  Health,
+  Person,
 } = require('../controllers');
 
 router
-  .get('/health', HealthController.health);
+  // Health endpoint
+  .get('/health', Health.health)
+  // Person endpoints
+  .post('/person', Person.create)
+  .get('/person', Person.all);
 
 module.exports = router;
