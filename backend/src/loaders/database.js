@@ -1,8 +1,5 @@
 const { Model } = require('objection');
 const Knex = require('knex');
-const mariadb = require('mariadb');
-const mysql = require('mysql');
-const config = require('../config');
 const knexFile = require('../config/knexfile');
 const knexConfig = knexFile.development;
 

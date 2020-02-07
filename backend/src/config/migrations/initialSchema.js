@@ -7,6 +7,9 @@ exports.up = knex => {
       table.string('email')
       table.string('phone')
       table.string('password')
+      table.datetime('createdAt')
+      table.datetime('updatedAt')
+      table.boolean('deleted')
     })
 }
 

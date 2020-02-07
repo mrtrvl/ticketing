@@ -1,5 +1,5 @@
-const { Model } = require('objection');
-class Person extends Model {
+const ModelBase = require('./ModelBase');
+class Person extends ModelBase {
   static get tableName() {
     return 'persons';
   }
@@ -14,7 +14,10 @@ class Person extends Model {
         lastName: { type: 'string', minLength: 1, maxLength: 255},
         email: { type: 'string', minlength: 1, maxLength: 255},
         phone: { type: 'string', minLength: 1, maxLength: 20},
-        password: { type: 'string', minLength: 1, maxLength: 255}
+        password: { type: 'string', minLength: 1, maxLength: 255},
+        createdAt: { type: 'datetime'},
+        updatedAt: { type: 'datetime'},
+        deleted: { type: 'boolean' }
       }
     }
   }

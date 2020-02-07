@@ -16,7 +16,18 @@ module.exports = {
     }
   }, async all() {
     try {
-      const persons = await Person.query();
+      const persons = await Person.query()
+        .select(
+          'firstName',
+          'lastName',
+          'email',
+          'phone',
+          'createdAt',
+          'updatedAt'
+          )
+        .where(
+          'deleted', 0
+          );
       const message = {
         message: 'Persons.',
         success: true,
