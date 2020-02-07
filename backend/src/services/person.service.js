@@ -51,6 +51,7 @@ module.exports = {
         success: true,
         person
       }
+      return person;
     } catch (error) {
       throw(error);
     }

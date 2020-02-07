@@ -6,6 +6,7 @@ const router = new Router({
 const {
   Health,
   Person,
+  Auth
 } = require('../controllers');
 
 router
@@ -13,6 +14,9 @@ router
   .get('/health', Health.health)
   // Person endpoints
   .post('/person', Person.create)
-  .get('/person', Person.all);
+  .get('/person', Person.all)
+  // Auth endpoints
+  .post('/login', Auth.login)
+  .post('/signup', Auth.signup);
 
 module.exports = router;

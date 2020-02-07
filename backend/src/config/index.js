@@ -5,6 +5,9 @@ module.exports = {
   jwt: {
     secret: process.env.JWT_SECRET
   },
+  hash: {
+    saltRounds: 10
+  },
   db: {
     dev: {
       user: process.env.DB_USER,

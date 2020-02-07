@@ -18,8 +18,9 @@ const {
 module.exports = {
   async errorHandler (ctx, next) {
     try {
-      next();
+      await next();
     } catch (error) {
+      ctx.app.emit('error', error, ctx);
       if (error instanceof ValidationError) {
         switch (error.type){
           case 'ModelValidation':
@@ -124,6 +125,12 @@ module.exports = {
           message: error.message,
           type: 'UnknownDatabaseError',
           data: {}
+        }
+      } else if (typeof error === 'string') {
+        ctx.status = 500;
+        ctx.body = {
+          message: error,
+          type: 'API error'
         }
       } else {
         ctx.status = 500;
