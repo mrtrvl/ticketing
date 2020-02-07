@@ -5,7 +5,6 @@ module.exports = {
       const createdPerson = await Person.query().insert({
         ...person
       });
-      console.log(createdPerson)
       const message = {
         message: 'Person created.',
         success: true,
@@ -18,9 +17,8 @@ module.exports = {
   }, async all() {
     try {
       const persons = await Person.query();
-      console.log(persons)
       const message = {
-        message: 'Person created.',
+        message: 'Persons.',
         success: true,
         persons
       }
