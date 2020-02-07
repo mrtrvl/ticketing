@@ -6,7 +6,7 @@ module.exports = {
         ...person
       });
       const message = {
-        message: 'Person created.',
+        message: 'Person created',
         success: true,
         person: createdPerson
       }
@@ -29,13 +29,31 @@ module.exports = {
           'deleted', 0
           );
       const message = {
-        message: 'Persons.',
+        message: 'Persons',
         success: true,
         persons
       }
       return message;
     } catch (error) {
       throw (error);
+    }
+  },
+  async findByEmail(email) {
+    try {
+      const person = await Person.query()
+        .findOne({
+          email: email,
+          deleted: 0
+        });
+      if (!person) throw('Person not found!');
+      const message = {
+        message: 'Person',
+        success: true,
+        person
+      }
+      return person;
+    } catch (error) {
+      throw(error);
     }
   }
 }
