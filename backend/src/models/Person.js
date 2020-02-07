@@ -7,7 +7,8 @@ class Person extends ModelBase {
   static get jsonSchema() {
     return {
       type: 'object',
-      required: ['firstName', 'lastName'],
+      required: ['firstName', 'lastName', 'email'],
+      unique: ['email'],
       properties: {
         id: { type: 'integer'},
         firstName: { type: 'string', minLength: 1, maxLength: 255},
